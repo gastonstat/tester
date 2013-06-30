@@ -12,7 +12,8 @@ URL: http://www.gastonsanchez.com/tester,
 Depends:
     R (>= 3.0)
 Suggests:
-    testthat
+    testthat,
+    knitr
 VignetteBuilder: knitr
 Collate:
     'has-dimension.r'
