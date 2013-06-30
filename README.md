@@ -4,7 +4,7 @@
 
 ## Motivation
 
-I developed `tester` to have a set of functions to test objects in a friendly way, following the so-called *literate programming* paradigm.
+I developed `tester` to have a set of functions for testing objects in a friendly way, following the so-called [literate programming](http://www-cs-faculty.stanford.edu/~uno/lp.html) paradigm.
 
 If you want to test if a number is positive you can do something like this:
 ```ruby
