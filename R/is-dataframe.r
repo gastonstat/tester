@@ -1,0 +1,47 @@
+#' @title Is data frame
+#' @description
+#' \code{is_matrix} tests if an object is a matrix \cr
+#' \code{is_numeric_matrix} tests if an object is a numeric matrix \cr
+#' \code{is_string_matrix} tests if an object is a string matrix 
+#' 
+#' @param x an R object
+#' @name is_dataframe
+#' @aliases is_dataframe is_numeric_dataframe is_string_dataframe
+#' is_not_dataframe
+#' @export is_dataframe is_numeric_dataframe is_string_dataframe
+#' is_not_dataframe
+#' @examples
+#' is_dataframe(iris) # TRUE
+#' is_dataframe(1:10) # FALSE
+#' 
+#' is_numeric_dataframe(iris) # FALSE
+#' is_numeric_dataframe(iris[,1:4]) # TRUE
+#' 
+#' DF = matrix(letters[1:24], 6, 4)
+#' DF1 = data.frame(DF)
+#' DF2 = data.frame(DF, stringsAsFactors=FALSE)
+#' is_string_dataframe(DF1) # FALSE
+#' is_string_dataframe(DF2) # TRUE
+NULL
+
+is_dataframe <- function(x) {
+  if (is.data.frame(x)) TRUE else FALSE
+}
+
+is_numeric_dataframe <- function(x) {
+  if (is.data.frame(x)) {
+    numerics = unlist(lapply(x, is.numeric))
+    if (sum(numerics) == dim(x)[2L]) TRUE else FALSE
+  } else FALSE
+}
+
+is_string_dataframe <- function(x) {
+  if (is.data.frame(x)) {
+    characters = unlist(lapply(x, is.character))
+    if (sum(characters) == dim(x)[2L]) TRUE else FALSE
+  } else FALSE
+}
+
+is_not_dataframe <- function(x) {
+  !is_dataframe(x)
+}

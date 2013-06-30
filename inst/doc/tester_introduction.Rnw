@@ -1,0 +1,250 @@
+\documentclass{article}
+\usepackage{upquote}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setlength{\parindent}{0in}
+\usepackage{color}
+\definecolor{darkgray}{rgb}{0.3,0.3,0.3}
+\definecolor{lightgray}{rgb}{0.5,0.5,0.5}
+\definecolor{tomato}{rgb}{0.87,0.32,0.24}
+\definecolor{myblue}{rgb}{0.066,0.545,0.890}
+\definecolor{linkcolor}{rgb}{0.87,0.32,0.24}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor
+}
+
+% \VignetteIndexEntry{Introduction to tester}
+% \VignetteEngine{knitr}
+
+\begin{document}
+\title{Introduction to \texttt{tester}}
+\author{
+ \textbf{\textcolor{darkgray}{G}}\textcolor{lightgray}{aston} 
+ \textbf{\textcolor{darkgray}{S}}\textcolor{lightgray}{anchez} \\
+  \small \texttt{\href{http://www.gastonsanchez.com/tester}
+{www.gastonsanchez.com/tester}}
+}
+\date{}
+\maketitle
+
+
+<<echo=FALSE, message=FALSE>>=
+library(tester)
+@
+
+\section{Introduction and Motivation}
+\texttt{tester} provides human readable functions to test characteristics of some common R objects. The main purpose behind \texttt{tester} is to help you validate objects, especially for programming and developing purposes (e.g. creating R packages)
+
+\paragraph{Testing objects}
+When we write a function, more often than not, we need to validate its arguments. In order to do so, we can use some of the already available functions in R that allow us to test whether objects have certain features. For instance, we can use \texttt{is.matrix(M)} to test if \texttt{M} is a matrix. Likewise, if you want to test if an object is a list, we can use the \texttt{is.list()} function.
+
+\vspace{2mm}
+The interesting part comes when we want to test for more specific characteristics, like testing if \texttt{M} is a numeric matrix, or test if a number is a positive integer, or maybe if it is a decimal number. Let's take the case in which we want to test whether an object is a character matrix. One way to do that would be to write something like this:
+<<testing_str_matrix>>=
+# test if object is a character matrix
+object = matrix(letters[1:6], 2, 3)
+
+if (is.matrix(object) & is.character(object)) TRUE else FALSE
+@
+
+Now let's say we want to test if a given number is a positive integer:
+<<testing_positive_int1>>=
+# test if number is a positive integer
+number = 1
+
+if (number > 0 & is.integer(number)) TRUE else FALSE
+@
+
+In this case, we know that \texttt{number = 1} but the test returned \texttt{FALSE}. The reason is that the number 1 is not an strict integer in R. Instead, we need to declare \texttt{number = 1L}. Now, if we test again we will get \texttt{TRUE}:
+<<testing_positive_int2>>=
+# test if number is a positive integer
+number = 1L
+
+if (number > 0 & is.integer(number)) TRUE else FALSE
+@
+
+
+\paragraph{Easier tests}
+If we just have a couple of functions, testing its arguments may not be a big deal. But when we have dozens or hundreds of functions, even if they are not in the form of a package, testing their arguments can be more complicated. Instead of writing expressions like the following one:
+<<long_line, eval=FALSE>>=
+if (number > 0 & is.integer(number)) TRUE else FALSE
+@
+
+it would also be desirable to simply write something like this:
+<<short_line, eval=FALSE>>=
+is_positive_integer(number)
+@
+
+This is precisely what \texttt{tester} allows us to do by providing a set of functions to test objects in a friendly way, following the so-called \textit{literate programming} paradigm. Under this paradigm, instead of writing programs instructing the computer what to do, we write programs explaining humans what we want the computer to do. The advantage is that \textit{when we read code, we should be able to do so as if we were reading a text}. In this sense, the goal of \texttt{tester} is twofold: 1) help you test objects, and 2) help you write more human readable code. 
+
+\vspace{2mm}
+Here is another example. Suppose we want to check if a vector has missing values. One option to answer that quesiton is to use the function \texttt{is.na()}:
+<<is_na_ex1>>=
+# test for missing values
+is.na(c(1, 2, 3, 4, NA))
+@
+
+Depending on your goals, \texttt{is.na()} might be enough. But what if we just want to simply test if a vector has missing values? With \texttt{tester} now we can with do that using the function \texttt{has\_missing()}:
+<<is_na_ex2>>=
+# test for missing values
+has_missing(c(1, 2, 3, 4, NA))
+
+# or equivalently
+has_NA(c(1, 2, 3, 4, NA))
+@
+
+
+
+\section{About \texttt{tester}}
+To use \texttt{tester} (once you have installed it), load it with the function \texttt{library()}:
+<<load_tester, eval=FALSE>>=
+# load package tester
+library(tester)
+@
+
+
+\subsection{Numbers}
+To test if we have number, as well as different types of numbers, we can use one of the following functions:
+\begin{center}
+ \begin{tabular}{l l}
+  \multicolumn{2}{c}{\textbf{Testing Numbers}} \\
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{is\_positive()} & tests if a number is positive \\
+  \texttt{is\_negative()} & tests if a number is negative \\
+  \texttt{is\_integer()} & tests if a number is an integer \\
+  \texttt{is\_natural()} & tests if a number is a natural number \\
+  \texttt{is\_odd()} & tests if a number is an odd number \\
+  \texttt{is\_even()} & tests if a number is an even number \\
+  \texttt{is\_positive\_integer()} & tests if a number is a positive integer \\
+  \texttt{is\_negative\_integer()} & tests if a number is a negative integer \\
+  \texttt{is\_decimal()} & tests if a number is decimal \\
+  \texttt{is\_positive\_decimal()} & tests if a number is a positive decimal \\
+  \texttt{is\_negative\_decimal()} & tests if a number is a negative decimal \\
+  \hline
+ \end{tabular}
+\end{center}
+
+
+
+\subsection{Logical}
+To test if an object (or a condition) is \texttt{TRUE} or \texttt{FALSE}, we can use the following functions:
+\begin{center}
+ \begin{tabular}{l l}
+  \multicolumn{2}{c}{\textbf{Testing Logicals}} \\
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{is\_TRUE()} & tests if an object is \texttt{TRUE} \\
+  \texttt{is\_FALSE()} & tests if an object is \texttt{FALSE} \\
+  \texttt{true\_or\_false()} & tests if is \texttt{TRUE} or \texttt{FALSE} \\
+  \hline
+ \end{tabular}
+\end{center}
+
+
+
+\subsection{Vectors}
+To test if we have different types of vectors we can use the following functions:
+\begin{center}
+ \begin{tabular}{l l}
+  \multicolumn{2}{c}{\textbf{Testing Vectors}} \\
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{is\_vector()} & tests if an object is a vector \\
+  \texttt{is\_numeric\_vector()} & tests if an object is a numeric vector \\
+  \texttt{is\_string\_vector()} & tests if an object is a string vector \\
+  \texttt{is\_logical\_vector()} & tests if an object is a logical vector \\
+  \texttt{is\_not\_vector()} & tests if an object is not a vector \\
+  \hline
+ \end{tabular}
+\end{center}
+
+
+
+\subsection{Matrices}
+Likewise, to test if we have different types of matrices we can use the following functions:
+\begin{center}
+ \begin{tabular}{l l}
+  \multicolumn{2}{c}{\textbf{Testing Matrices}} \\
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{is\_matrix()} & tests if an object is a matrix \\
+  \texttt{is\_numeric\_matrix()} & tests if an object is a numeric matrix \\
+  \texttt{is\_string\_matrix()} & tests if an object is a string matrix \\
+  \texttt{is\_logical\_matrix()} & tests if an object is a logical matrix \\
+  \texttt{is\_square\_matrix()} & tests if an object is a string matrix \\
+  \texttt{is\_diagonal()} & tests if an object is a diagonal matrix\\
+  \texttt{is\_triangular()} & tests if an object is a triangular matrix \\
+  \texttt{is\_lower\_triangular()} & tests if a matrix is lower triangular \\
+  \texttt{is\_upper\_triangular()} & tests if a matrix is upper triangular \\
+  \texttt{is\_not\_matrix()} & tests if an object is not a matrix \\
+  \hline
+ \end{tabular}
+\end{center}
+
+
+
+\subsection{Data Frame}
+To test if we have different types of data frames we can use the following functions:
+\begin{center}
+ \begin{tabular}{l l}
+  \multicolumn{2}{c}{\textbf{Testing Data Frames}} \\
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{is\_dataframe()} & tests if an object is a data frame \\
+  \texttt{is\_numeric\_dataframe()} & tests if an object is a numeric data frame \\
+  \texttt{is\_string\_dataframe()} & tests if an object is a string data frame \\
+  \texttt{is\_not\_dataframe()} & tests if an object is not a data frame \\
+  \hline
+ \end{tabular}
+\end{center}
+
+
+
+\subsection{Missing Values}
+For testing missing values, infinite values, not numbers, \texttt{tester} provides the following functions:
+\begin{center}
+ \begin{tabular}{l l}
+  \multicolumn{2}{c}{\textbf{Testing Missing Values}} \\
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{has\_missing()} & tests if an object has missing values \\
+  \texttt{has\_infinite()} & tests if an object has infinite values \\
+  \texttt{has\_not\_a\_number()} & tests if an object has 'Not a Number' \\
+  \texttt{has\_nas()} & tests if an object has \texttt{NA, Inf, -Inf, NaN} \\
+  \hline
+ \end{tabular}
+\end{center}
+
+
+\subsection{Other}
+\texttt{tester} comes with many more functions that will allow you to check ---in a friendly way--- whether some common R objects have certain characteristics. Some of the extra available functions are:
+\begin{center}
+ \begin{tabular}{l l}
+  \multicolumn{2}{c}{\textbf{Testing Missing Values}} \\
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{has\_dimension()} & tests if an object has dimension \\
+  \texttt{is\_tabular()} & tests if an object is a matrix or data frame \\
+  \texttt{is\_multiple()} & tests if a number is multiple of a given number \\
+  \texttt{list\_of\_vectors()} & tests if an object is a list of vectors \\
+  \texttt{list\_of\_numeric\_vectors()} & tests if an object is a list of numeric vectors \\
+  \texttt{list\_of\_string\_vectors()} & tests if an object is a list of string vectors \\
+  \texttt{list\_of\_logical\_vectors()} & tests if an object is a list of logical vectors \\
+  \hline
+ \end{tabular}
+\end{center}
+
+
+
+\end{document}
