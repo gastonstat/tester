@@ -6,17 +6,18 @@
 
 I developed `tester` to have a set of functions for testing objects in a friendly way, following the so-called [literate programming](http://www-cs-faculty.stanford.edu/~uno/lp.html) paradigm.
 
-If you want to test if a number is positive you can do something like this:
+Without `tester`: If you want to test if a number is positive, you would do something like this:
 ```ruby
 number = 10
 if (number > 0) TRUE else FALSE
 ```
-That is OK. But I still wanted to be able to type something like this:
+
+With `tester`: There is nothing wrong with the previous way of doing things. However, I still wanted to be able to type something like this:
 ```ruby
 # another way
 is_positive(number)
 ```
-This helps me when reading my code. Is very visual, very literal. It follows the literate programming paradigm! That was my purpose for developing `tester`
+This is what `tester` offers you. By having functions like `is_positive()`, it helps your code to be more understandable. The underlying principle is to have tools that get you closer to the literate programming paradigm! That was my purpose for developing `tester`
 
 
 ## Installation
@@ -27,7 +28,7 @@ Stable version on CRAN:
 install.packages('tester')
 ```
 
-Development version:
+Development version on github:
 
 ```ruby
 library(devtools)
