@@ -1,5 +1,6 @@
 \name{is_vector}
 \alias{is_logical_vector}
+\alias{is_not_vector}
 \alias{is_numeric_vector}
 \alias{is_string_vector}
 \alias{is_vector}

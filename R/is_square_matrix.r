@@ -29,9 +29,10 @@ is_not_square_matrix <- function(x) {
 #' @title Is diagonal matrix
 #' 
 #' @description Test if a matrix is diagonal (or not)
-#' (i.e. suqare matrix with zeros above and below the diagonal)
+#' (i.e. square matrix with zeros above and below the diagonal)
 #' 
 #' @param x a matrix
+#' @aliases is_diagonal is_not_diagonal
 #' @export is_diagonal is_not_diagonal
 #' @examples
 #' m1 = diag(1:3, 3, 3)

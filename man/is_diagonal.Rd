@@ -1,5 +1,6 @@
 \name{is_diagonal}
 \alias{is_diagonal}
+\alias{is_not_diagonal}
 \title{Is diagonal matrix}
 \usage{
   is_diagonal(x)
@@ -8,7 +9,7 @@
   \item{x}{a matrix}
 }
 \description{
-  Test if a matrix is diagonal (or not) (i.e. suqare matrix
+  Test if a matrix is diagonal (or not) (i.e. square matrix
   with zeros above and below the diagonal)
 }
 \examples{

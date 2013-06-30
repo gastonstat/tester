@@ -8,8 +8,10 @@
 #' 
 #' @param x an R object
 #' @name is_vector
-#' @aliases is_vector is_numeric_vector is_string_vector is_logical_vector
-#' @export is_vector is_numeric_vector is_string_vector is_logical_vector
+#' @aliases is_vector is_numeric_vector is_string_vector 
+#' is_logical_vector is_not_vector
+#' @export is_vector is_numeric_vector is_string_vector 
+#' is_logical_vector is_not_vector
 #' @examples
 #' a = 1:10
 #' b = letters[1:10]
