@@ -17,7 +17,7 @@ With `tester`: There is nothing wrong with the previous way of doing things. How
 # another way
 is_positive(number)
 ```
-This is what `tester` offers you. By having functions like `is_positive()`, it helps your code to be more understandable. The underlying principle is to have tools that get you closer to the literate programming paradigm! That was my purpose for developing `tester`
+This is what `tester` offers you. By having functions like `is_positive()`, it helps your code to be more understandable. The underlying principle is to have tools that get you closer to the literate programming paradigm. That was my purpose for developing `tester`
 
 
 ## Installation
