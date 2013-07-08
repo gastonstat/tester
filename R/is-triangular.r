@@ -32,15 +32,13 @@ NULL
 
 is_lower_triangular <- function(x, diag = FALSE) {
   if (is.matrix(x)) {
-    if (sum(abs(x[upper.tri(x, diag=diag)])) > 0)
-      FALSE else TRUE
+    all(x[upper.tri(x, diag = diag)] == 0)
   } else FALSE
 }
 
 is_upper_triangular <- function(x, diag = FALSE) {
   if (is.matrix(x)) {
-    if (sum(abs(x[lower.tri(x, diag=diag)])) > 0)
-      FALSE else TRUE
+    all(x[lower.tri(x, diag = diag)] == 0)
   } else FALSE
 }
 

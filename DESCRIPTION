@@ -19,6 +19,7 @@ Collate:
     'has-dimension.r'
     'has_factors.r'
     'has-missing.r'
+    'has-names.r'
     'is-class.r'
     'is-dataframe.r'
     'is-decimal.r'

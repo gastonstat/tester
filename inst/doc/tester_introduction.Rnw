@@ -87,7 +87,7 @@ Here is another example. Suppose we want to check if a vector has missing values
 is.na(c(1, 2, 3, 4, NA))
 @
 
-Depending on your goals, \texttt{is.na()} might be enough. But what if we just want to simply test if a vector has missing values? With \texttt{tester} now we can with do that using the function \texttt{has\_missing()}:
+Depending on your goals, \texttt{is.na()} might be enough. But what if we just want to simply test if a vector has missing values? With \texttt{tester} now we can do that using the function \texttt{has\_missing()}:
 <<is_na_ex2>>=
 # test for missing values
 has_missing(c(1, 2, 3, 4, NA))
@@ -235,6 +235,9 @@ For testing missing values, infinite values, not numbers, \texttt{tester} provid
   Function & Description \\
   \hline
   \texttt{has\_dimension()} & tests if an object has dimension \\
+  \texttt{has\_names()} & tests if an object has names \\
+  \texttt{has\_rownames()} & tests if an object row names \\
+  \texttt{has\_colnames()} & tests if an object column names \\
   \texttt{is\_tabular()} & tests if an object is a matrix or data frame \\
   \texttt{is\_multiple()} & tests if a number is multiple of a given number \\
   \texttt{list\_of\_vectors()} & tests if an object is a list of vectors \\
