@@ -9,7 +9,7 @@
   \item{x}{an R object}
 }
 \description{
-  \code{has_names} tests if an object has names
+  \code{has_names} tests if an object has names \cr
   \code{lacks_names} tests if an object lacks names
 }
 \examples{
@@ -22,5 +22,8 @@ has_names(y) # FALSE
 
 lacks_names(x) # FALSE
 lacks_names(y) # TRUE
+}
+\seealso{
+  \code{\link{has_rownames}}
 }
 

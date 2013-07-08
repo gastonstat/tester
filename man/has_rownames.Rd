@@ -11,11 +11,11 @@
   \item{x}{an R object}
 }
 \description{
-  \code{has_rownames} tests if an object has row names
+  \code{has_rownames} tests if an object has row names \cr
   \code{has_colnames} tests if an object has column names
-  \code{lacks_rownames} tests if an object lacks row names
-  \code{lacks_colnames} tests if an object lacks column
-  names
+  \cr \code{lacks_rownames} tests if an object lacks row
+  names \cr \code{lacks_colnames} tests if an object lacks
+  column names \cr
 }
 \examples{
 has_rownames(iris) # TRUE
@@ -23,5 +23,8 @@ has_colnames(iris) # TRUE
 
 lacks_rownames(letters[1:10]) # TRUE
 lacks_colnames(letters[1:10]) # TRUE
+}
+\seealso{
+  \code{\link{has_names}}
 }
 

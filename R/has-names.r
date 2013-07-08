@@ -1,11 +1,12 @@
 #' @title Has or lacks names?
 #' @description 
-#' \code{has_names} tests if an object has names
+#' \code{has_names} tests if an object has names \cr
 #' \code{lacks_names} tests if an object lacks names
 #' 
 #' @param x an R object
 #' @aliases has_names lacks_names
 #' @export has_names lacks_names
+#' @seealso \code{\link{has_rownames}}
 #' @examples
 #' set.seed(1)
 #' x <- y <- runif(10)
@@ -27,14 +28,15 @@ lacks_names <- function(x) {
 
 #' @title Has or lacks row/column names?
 #' @description 
-#' \code{has_rownames} tests if an object has row names
-#' \code{has_colnames} tests if an object has column names
-#' \code{lacks_rownames} tests if an object lacks row names
-#' \code{lacks_colnames} tests if an object lacks column names
+#' \code{has_rownames} tests if an object has row names \cr
+#' \code{has_colnames} tests if an object has column names \cr
+#' \code{lacks_rownames} tests if an object lacks row names \cr
+#' \code{lacks_colnames} tests if an object lacks column names \cr
 #' 
 #' @param x an R object
 #' @aliases has_rownames has_colnames lacks_rownames lacks_colnames
 #' @export has_rownames has_colnames lacks_rownames lacks_colnames
+#' @seealso \code{\link{has_names}}
 #' @examples
 #' has_rownames(iris) # TRUE
 #' has_colnames(iris) # TRUE

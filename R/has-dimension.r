@@ -1,7 +1,7 @@
 #' @title Has dimension?
 #' @description 
 #' \code{has_dimension} and \code{has_dim} test if an object 
-#' has dimension (i.e. \code{dim})
+#' has dimension (i.e. \code{dim}) \cr
 #' \code{lacks_dimension} and \code{lacks_dim} test if an object 
 #' lacks dimension
 #' 
