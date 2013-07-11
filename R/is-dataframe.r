@@ -1,8 +1,10 @@
 #' @title Is data frame
+#' 
 #' @description
-#' \code{is_matrix} tests if an object is a matrix \cr
-#' \code{is_numeric_matrix} tests if an object is a numeric matrix \cr
-#' \code{is_string_matrix} tests if an object is a string matrix 
+#' \code{is_dataframe} tests if an object is a data frame \cr
+#' \code{is_numeric_dataframe} tests if an object is a numeric data frame \cr
+#' \code{is_string_dataframe} tests if an object is a string data frame \cr
+#' \code{is_not_dataframe} tests if an object is not a data frame 
 #' 
 #' @param x an R object
 #' @name is_dataframe

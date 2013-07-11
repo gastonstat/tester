@@ -30,12 +30,16 @@ lacks_names <- function(x) {
 #' @description 
 #' \code{has_rownames} tests if an object has row names \cr
 #' \code{has_colnames} tests if an object has column names \cr
+#' \code{has_dimnames} tests if an object has dimnames \cr
 #' \code{lacks_rownames} tests if an object lacks row names \cr
 #' \code{lacks_colnames} tests if an object lacks column names \cr
+#' \code{lacks_dimnames} tests if an object lacks dimnames \cr
 #' 
 #' @param x an R object
-#' @aliases has_rownames has_colnames lacks_rownames lacks_colnames
-#' @export has_rownames has_colnames lacks_rownames lacks_colnames
+#' @aliases has_rownames has_colnames has_dimnames 
+#' lacks_rownames lacks_colnames lacks_dimnames
+#' @export has_rownames has_colnames has_dimnames 
+#' lacks_rownames lacks_colnames lacks_dimnames
 #' @seealso \code{\link{has_names}}
 #' @examples
 #' has_rownames(iris) # TRUE
@@ -43,6 +47,10 @@ lacks_names <- function(x) {
 #' 
 #' lacks_rownames(letters[1:10]) # TRUE
 #' lacks_colnames(letters[1:10]) # TRUE
+#' 
+#' A = matrix(1:10)
+#' has_dimnames(A) # FALSE
+#' lacks_dimnames(A) # TRUE
 has_rownames <- function(x) {
   if (!is.null(rownames(x))) TRUE else FALSE
 }
@@ -51,10 +59,18 @@ has_colnames <- function(x) {
   if (!is.null(colnames(x))) TRUE else FALSE
 }
 
+has_dimnames <- function(x) {
+  if (!is.null(dimnames(x))) TRUE else FALSE
+}
+
 lacks_rownames <- function(x) {
   !has_rownames(x)
 }
 
 lacks_colnames <- function(x) {
   !has_colnames(x)
+}
+
+lacks_dimnames <- function(x) {
+  !has_dimnames(x)
 }
