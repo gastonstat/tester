@@ -64,15 +64,9 @@ is.integer(1.0)
 is.integer(1.1)
 ```
 
-More info at [www.gastonsanchez.com/tester](http://www.gastonsanchez.com/tester)
-
-Links
------
-[tester package github](http://github.com/gastonstat/tester)
-
-[tester documentation](http://www.gastonsanchez.com/tester)
-
 
 Author Contact
 --------------
+[www.gastonsanchez.com](http://www.gastonsanchez.com)
+
 Gaston Sanchez (gaston.stat at gmail.com)
