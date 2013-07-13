@@ -1,6 +1,7 @@
-# tester
+# `"tester"`
 
-**tester** provides human readable functions to test characteristics of some common R objects. The main purpose behind `tester` is to help you validate objects, especially for programming and developing purposes (e.g. creating R packages)
+**tester** provides human readable functions to test characteristics of some common [R](http://www.r-project.org/) objects. The main purpose behind `tester` is to help you validate objects, especially for programming and developing purposes (e.g. creating R packages)
+
 
 ## Motivation
 
@@ -22,13 +23,13 @@ This is what `tester` offers you. By having functions like `is_positive()`, it h
 
 ## Installation
 
-Stable version on CRAN:
+Stable version on [CRAN](http://cran.r-project.org/web/packages/tester/index.html):
 
 ```ruby
 install.packages('tester')
 ```
 
-Development version on github:
+Development version on [github](https://github.com/gastonstat/tester):
 
 ```ruby
 library(devtools)
@@ -69,4 +70,4 @@ Author Contact
 --------------
 [www.gastonsanchez.com](http://www.gastonsanchez.com)
 
-Gaston Sanchez (gaston.stat at gmail.com)
+Gaston Sanchez (`gaston.stat at gmail.com`)
