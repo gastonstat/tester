@@ -9,11 +9,12 @@
 }
 \description{
   \code{is_tabular} tests if an object has a tabular format
-  (i.e. a matrix or data frame) \cr
-  \code{is_numeric_tabular} tests if an object is a numeric
-  table (i.e. a numeric matrix or data frame) \cr
-  \code{is_string_tabular} tests if an object is a string
-  table
+  (i.e. a matrix or data frame) \cr \code{is_not_tabular}
+  tests if an object doesn't have a tabular format (i.e.
+  not matrix nor data frame) \cr \code{is_numeric_tabular}
+  tests if an object is a numeric table (i.e. a numeric
+  matrix or data frame) \cr \code{is_string_tabular} tests
+  if an object is a string table
 }
 \examples{
 A = matrix(1:10, 5, 2)
