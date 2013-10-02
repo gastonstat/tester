@@ -21,8 +21,8 @@ is_square_matrix <- function(x) {
 
 is_not_square_matrix <- function(x) {
   if (is.matrix(x)) {
-    if (nrow(x) == ncol(x)) TRUE else FALSE      
-  } else FALSE
+    if (nrow(x) != ncol(x)) TRUE else FALSE      
+  } else TRUE
 }
 
 

@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{upquote}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
@@ -217,6 +217,7 @@ Other functions related to matrices and data frames allows us to ask whether or 
   Function & Description \\
   \hline
   \texttt{has\_dimension()} & tests if an object has dimension \\
+  \texttt{is\_one\_dim()} & tests if an object has one-dimension \\
   \texttt{has\_rownames()} & tests if an object row names \\
   \texttt{has\_colnames()} & tests if an object column names \\
   \hline
