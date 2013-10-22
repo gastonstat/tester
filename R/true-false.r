@@ -22,12 +22,22 @@ NULL
 
 is_TRUE <- function(x) {
   if (is.logical(x)) {
-     if (x == TRUE) TRUE else FALSE
+    if (is.na(x)) {
+      FALSE
+    } else {
+      if (x == TRUE) TRUE else FALSE      
+    }
   } else FALSE
 }
 
 is_FALSE <- function(x) {
-  if (is.logical(x)) !is_TRUE(x) else FALSE
+  if (is.logical(x)) {
+    if (is.na(x)) {
+      FALSE
+    } else {
+      if (x == FALSE) TRUE else FALSE
+    }
+  } else FALSE
 }
 
 is_true <- function(x) is_TRUE(x)

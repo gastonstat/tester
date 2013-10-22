@@ -1,13 +1,13 @@
 Package: tester
 Type: Package
 Title: Tests and checks characteristics of R objects
-Version: 0.1.4
-Date: 2013-09-26
+Version: 0.1.5
+Date: 2013-10-22
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: tester allows you to test characteristics of common R objects.
 License: GPL-3
-URL: http://www.gastonsanchez.com/tester,
+URL: http://www.gastonsanchez.com,
     https://github.com/gastonstat/tester
 Depends:
     R (>= 3.0)
@@ -43,3 +43,4 @@ Collate:
     'same-mode.r'
     'same-type.r'
     'is-one-dim.r'
+    'is-single.r'
