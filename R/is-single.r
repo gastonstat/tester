@@ -3,7 +3,8 @@
 #' @description Tests if an object is single (i.e. of length 1)
 #' 
 #' @param x an R object
-#' @seealso \code{\link{is_single_number}}, \code{\link{is_single_string}}
+#' @seealso \code{\link{is_single_number}}, \code{\link{is_single_string}},
+#' \code{\link{is_single_logical}}
 #' @export
 #' @examples
 #' is_single("hoskdflksfd")  # TRUE
@@ -170,6 +171,32 @@ is_single_odd <- function(x) {
 is_single_even <- function(x) {
   if (is_single(x)) {
     is_even(x)
+  } else FALSE
+}
+
+
+#' @title Is single logical
+#' 
+#' @description Tests if an object is a single logical
+#' 
+#' @param x an R object
+#' @seealso \code{\link{is_single}}, \code{\link{is_single_true}},
+#' \code{\link{is_single_false}}
+#' @export
+#' @examples
+#' is_single_logical(TRUE)  # TRUE
+#' is_single_logical(FALSE)  # TRUE
+#' is_single_logical(c(TRUE, FALSE))  # FALSE
+#' is_single_logical(-1.0)  # FALSE
+#' is_single_logical(0)  # FALSE
+#' is_single_logical(NA)  # FALSE
+is_single_logical <- function(x) {
+  if (is_single(x)) {
+    if (is.na(x)) {
+      FALSE
+    } else {
+      is.logical(x)      
+    }
   } else FALSE
 }
 

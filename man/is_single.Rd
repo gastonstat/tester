@@ -18,6 +18,7 @@ is_single(matrix(runif(4), 2, 2))  # FALSE
 }
 \seealso{
   \code{\link{is_single_number}},
-  \code{\link{is_single_string}}
+  \code{\link{is_single_string}},
+  \code{\link{is_single_logical}}
 }
 
