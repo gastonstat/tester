@@ -1,8 +1,8 @@
 Package: tester
 Type: Package
 Title: Tests and checks characteristics of R objects
-Version: 0.1.5
-Date: 2013-10-22
+Version: 0.1.6
+Date: 2013-10-23
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: tester allows you to test characteristics of common R objects.
@@ -44,3 +44,4 @@ Collate:
     'same-type.r'
     'is-one-dim.r'
     'is-single.r'
+    'is-scalar.r'

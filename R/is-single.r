@@ -93,6 +93,68 @@ is_single_negative <- function(x) {
 }
 
 
+#' @title Is single decimal
+#' 
+#' @description Tests if an object is a single decimal number
+#' 
+#' @param x an R object
+#' @seealso \code{\link{is_single}}
+#' @export
+#' @examples
+#' is_single_decimal(0.01)  # TRUE
+#' is_single_decimal(-3/4)  # TRUE
+#' is_single_decimal("hoskdflksfd")  # FALSE
+#' is_single_decimal("1.0")  # FALSE
+#' is_single_decimal(1:5)  # FALSE
+is_single_decimal <- function(x) {
+  if (is_single(x)) {
+    is_decimal(x)
+  } else FALSE
+}
+
+
+#' @title Is single positive decimal
+#' 
+#' @description Tests if an object is a single positive decimal
+#' 
+#' @param x an R object
+#' @seealso \code{\link{is_single}}, \code{\link{is_single_positive}},
+#' \code{\link{is_single_negative_decimal}}
+#' @export
+#' @examples
+#' is_single_positive_decimal(0.01)  # TRUE
+#' is_single_positive_decimal(-3/4)  # FALSE
+#' is_single_positive_decimal("hoskdflksfd")  # FALSE
+#' is_single_positive_decimal("1.0")  # FALSE
+#' is_single_positive_decimal(1:5)  # FALSE
+is_single_positive_decimal <- function(x) {
+  if (is_single(x)) {
+    is_positive_decimal(x)
+  } else FALSE
+}
+
+
+#' @title Is single negative decimal
+#' 
+#' @description Tests if an object is a single positive decimal
+#' 
+#' @param x an R object
+#' @seealso \code{\link{is_single}}, \code{\link{is_single_negative}},
+#' \code{\link{is_single_positive_decimal}}
+#' @export
+#' @examples
+#' is_single_negative_decimal(-3/4)  # TRUE
+#' is_single_negative_decimal(0.01)  # FALSE
+#' is_single_negative_decimal("hoskdflksfd")  # FALSE
+#' is_single_negative_decimal("1.0")  # FALSE
+#' is_single_negative_decimal(1:5)  # FALSE
+is_single_negative_decimal <- function(x) {
+  if (is_single(x)) {
+    is_negative_decimal(x)
+  } else FALSE
+}
+
+
 #' @title Is single positive integer
 #' 
 #' @description Tests if an object is a single positive integer
