@@ -9,11 +9,10 @@
 #' is_multiple(3, of=5) # FALSE
 #' is_multiple(2*pi, of=pi) # TRUE
 #' is_multiple(matrix(1:6,2,3), of=2)
-is_multiple <- function(x, of) {
-  if (missing(of))
-    stop("\n'of' is missing with no default")
-  if (length(of) > 1)
-    stop("\n'of' must be a single number")
+is_multiple <- function(x, of) 
+{
+  if (is_not_scalar(x))
+    stop("\n'of' must be a scalar")
   
   (x %% of) == 0
 }

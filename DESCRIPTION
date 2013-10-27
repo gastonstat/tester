@@ -1,8 +1,8 @@
 Package: tester
 Type: Package
 Title: Tests and checks characteristics of R objects
-Version: 0.1.6
-Date: 2013-10-23
+Version: 0.1.7
+Date: 2013-10-27
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: tester allows you to test characteristics of common R objects.

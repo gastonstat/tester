@@ -29,19 +29,22 @@
 NULL
 
 is_matrix <- function(x) {
-  if (is.matrix(x)) TRUE else FALSE
+  is.matrix(x)
 }
 
 is_numeric_matrix <- function(x) {
-  if (is.matrix(x) & is.numeric(x)) TRUE else FALSE
+  if (!is.matrix(x)) return(FALSE)
+  is.numeric(x)
 }
 
 is_string_matrix <- function(x) {
-  if (is.matrix(x) & is.character(x)) TRUE else FALSE
+  if (!is.matrix(x)) return(FALSE)
+  is.character(x)
 }
 
 is_logical_matrix <- function(x) {
-  if (is.matrix(x) & is.logical(x)) TRUE else FALSE
+  if (!is.matrix(x)) return(FALSE)
+  is.logical(x)
 }
 
 is_not_matrix <- function(x) {
