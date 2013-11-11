@@ -202,6 +202,7 @@ To test if we have different types of data frames we can use the following funct
   \texttt{is\_dataframe()} & tests if an object is a data frame \\
   \texttt{is\_numeric\_dataframe()} & tests if an object is a numeric data frame \\
   \texttt{is\_string\_dataframe()} & tests if an object is a string data frame \\
+  \texttt{is\_factor\_dataframe()} & tests if an object is a data frame of factors \\
   \texttt{is\_not\_dataframe()} & tests if an object is not a data frame \\
   \hline
  \end{tabular}
