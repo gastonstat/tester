@@ -4,7 +4,8 @@
 #' (i.e. same number of rows as number of columns)
 #' 
 #' @param x an R object
-#' @seealso \code{\link{is_matrix}}
+#' @seealso \code{\link{is_matrix}}, \code{\link{is_square_numeric_matrix}}
+#' \code{\link{is_rectangular_matrix}}
 #' @aliases is_square_matrix is_not_square_matrix
 #' @export is_square_matrix is_not_square_matrix
 #' @examples
