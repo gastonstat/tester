@@ -176,15 +176,18 @@ Likewise, to test if we have different types of matrices we can use the followin
   Function & Description \\
   \hline
   \texttt{is\_matrix()} & tests if an object is a matrix \\
+  \texttt{is\_not\_matrix()} & tests if an object is not a matrix \\
   \texttt{is\_numeric\_matrix()} & tests if an object is a numeric matrix \\
   \texttt{is\_string\_matrix()} & tests if an object is a string matrix \\
   \texttt{is\_logical\_matrix()} & tests if an object is a logical matrix \\
-  \texttt{is\_square\_matrix()} & tests if an object is a string matrix \\
+  \texttt{is\_square\_matrix()} & tests if an object is a square matrix \\
+  \texttt{is\_rectangular\_matrix()} & tests if an object is a rectangular matrix \\
+  \texttt{is\_tall\_matrix()} & tests if an object is a tall matrix \\
+  \texttt{is\_wide\_matrix()} & tests if an object is a wide matrix \\
   \texttt{is\_diagonal()} & tests if an object is a diagonal matrix\\
   \texttt{is\_triangular()} & tests if an object is a triangular matrix \\
   \texttt{is\_lower\_triangular()} & tests if a matrix is lower triangular \\
   \texttt{is\_upper\_triangular()} & tests if a matrix is upper triangular \\
-  \texttt{is\_not\_matrix()} & tests if an object is not a matrix \\
   \hline
  \end{tabular}
 \end{center}

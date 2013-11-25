@@ -21,6 +21,8 @@ is_square_matrix(m2) # FALSE
 is_not_square_matrix(m2) # TRUE
 }
 \seealso{
-  \code{\link{is_matrix}}
+  \code{\link{is_matrix}},
+  \code{\link{is_square_numeric_matrix}}
+  \code{\link{is_rectangular_matrix}}
 }
 
