@@ -33,4 +33,7 @@ is_one_dim(matrix(1:9, 3, 3))  # FALSE
 # general data frame
 is_one_dim(iris)  # FALSE
 }
+\seealso{
+  \code{\link{is_multidim}}
+}
 

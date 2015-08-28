@@ -46,9 +46,11 @@ is_single_string <- function(x) {
 #' is_single_number("hoskdflksfd")  # FALSE
 #' is_single_number("1.0")  # FALSE
 #' is_single_number(1:5)  # FALSE
+#' is_single_number(NA)  # FALSE
+#' is_single_number(Inf)  # FALSE
 is_single_number <- function(x) {
   if (is_single(x)) {
-    is.numeric(x)
+    (is.numeric(x) && is.finite(x))
   } else FALSE
 }
 

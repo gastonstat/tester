@@ -6,6 +6,7 @@
 #' 
 #' @param x an R object
 #' @return whether x is one-dimensional
+#' @seealso \code{\link{is_multidim}}
 #' @export
 #' @examples
 #' # vector
@@ -36,4 +37,49 @@ is_one_dim <- function(x)
   }
   # output
   one_dim
+}
+
+
+#' @title Test if an object is multi-dimensional
+#' 
+#' @description
+#' Returns \code{TRUE} if an object is a matrix or data frame with at
+#' least 2 rows and at least 2 columns, \code{FALSE} otherwise
+#' 
+#' @param x an R object
+#' @return whether x is multi-dimensional
+#' @seealso \code{\link{is_one_dim}}
+#' @export
+#' @examples
+#' # general matrix (nrow>1, ncol>1)
+#' is_multidim(matrix(1:9, 3, 3))  # TRUE
+#' 
+#' # general data frame
+#' is_multidim(iris)  # TRUE
+#' 
+#' # vector
+#' is_multidim(1:5)  # FALSE
+#' 
+#' # factor
+#' is_multidim(iris$Species)  # FALSE
+#' 
+#' # one row matrix
+#' is_multidim(matrix(1:5, 1, 5))  # FALSE
+#' 
+#' # one column matrix
+#' is_multidim(matrix(1:5, 5, 1))  # FALSE
+is_multidim <- function(x) 
+{
+  multidim = TRUE
+  if (lacks_dim(x)) {
+    return(FALSE)
+  } else {
+    if (dim(x)[1L] > 1 && dim(x)[2L] > 1) {
+      multidim = TRUE
+    } else {
+      multidim = FALSE
+    }
+  }
+  # output
+  multidim
 }
